@@ -1,5 +1,7 @@
 # AutoRebootWG1200HP
 
+## NEC WG1200HP の再起動ツールです
+
 ### How to use 
 
 ```bash
@@ -22,7 +24,7 @@ $ php wrapper.php
 
 
 ```php
-self::$client->setDefaultOption('exceptions', true);
+$this->client->setDefaultOption('exceptions', true);
 ```
 
 に変更して検証するなどしてください。
