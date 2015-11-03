@@ -10,9 +10,7 @@ class core
     {
         require_once('./vendor/autoload.php');
         self::$config = $this->getConfigs();
-        self::$client = new \GuzzleHttp\Client([
-            'defaults' => ['exceptions' => false]
-        ]);
+        self::$client = new \GuzzleHttp\Client();
     }
 
     private static function getConfigs()
