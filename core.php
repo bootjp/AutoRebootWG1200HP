@@ -4,13 +4,13 @@
 class core
 {
     private static $config;
-    private static $client;
+    private $client;
 
     public function __construct()
     {
         require_once('./vendor/autoload.php');
         self::$config = $this->getConfigs();
-        self::$client = new \GuzzleHttp\Client();
+        $this->client = new \GuzzleHttp\Client();
     }
 
     private static function getConfigs()
@@ -30,10 +30,10 @@ class core
     function logic()
     {
         foreach(self::$config as $host => $auth) {
-            self::$client->setDefaultOption('auth', [$auth['User'], $auth['Password']]);
-            self::$client->setDefaultOption('exceptions', false);
-            self::$client->get('http://' . $host . '/reboot.htm');
-            self::$client->post('http://' . $host . '/boafrm/formReboot', [
+            $this->client->setDefaultOption('auth', [$auth['User'], $auth['Password']]);
+            $this->client->setDefaultOption('exceptions', false);
+            $this->client->get('http://' . $host . '/reboot.htm');
+            $this->client->post('http://' . $host . '/boafrm/formReboot', [
                 'body' => 'reboot=%BA%C6%B5%AF%C6%B0+',
             ]);
         }
