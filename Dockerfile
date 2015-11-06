@@ -1,5 +1,7 @@
 FROM php:5.6-cli
 
+MAINTAINER oh@bootjp.me
+
 RUN apt-get update && apt-get install -y git
 
 ADD ./ /app
