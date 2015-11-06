@@ -14,16 +14,7 @@ class core
 
     private static function getConfigs()
     {
-        return [
-            '192.168.1.13' => [
-                'User' => 'admin',
-                'Password' => 'PassWord'
-            ],
-            '192.168.1.15' => [
-                'User' => 'admin',
-                'Password' => 'PassWord'
-            ]
-        ];
+        return parse_ini_file('./setting.ini', true);
     }
 
     public function logic()

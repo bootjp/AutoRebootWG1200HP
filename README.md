@@ -12,7 +12,7 @@ $ php composer.phar install
 or
 $ composer install
 
-$ vim core.php  // edit config   
+$ vim setting.init  // edit config
 $ php wrapper.php  
 
 ```
