@@ -7,14 +7,14 @@ class core
 
     public function __construct()
     {
-        require_once('./vendor/autoload.php');
+        require_once(__DIR__ . '/vendor/autoload.php');
         self::$config = $this->getConfigs();
         $this->client = new \GuzzleHttp\Client();
     }
 
     private static function getConfigs()
     {
-        return parse_ini_file('./setting.ini', true);
+        return parse_ini_file(__DIR__ . '/setting.ini', true);
     }
 
     public function logic()
