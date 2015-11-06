@@ -1,5 +1,7 @@
 FROM php:5.6-cli
 
+RUN apt-get update && apt-get install -y git
+
 ADD ./ /app
 
 RUN cd /app && curl -sS https://getcomposer.org/installer | php && php composer.phar install
