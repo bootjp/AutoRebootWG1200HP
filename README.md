@@ -20,11 +20,4 @@ $ php wrapper.php
 #### 注意点
 
 ルータの仕様上、再起動リクエスト後すぐに再起動が始まるため、  
-コネクションエラーがでると面倒なので、Guzzle Clientのexceptionを潰しています。
-
-
-```php
-$this->client->setDefaultOption('exceptions', true);
-```
-
-に変更して検証するなどしてください。
+コネクションエラーがでて面倒なので、Guzzle Clientのexceptionをtry-catchで避けています。

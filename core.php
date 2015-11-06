@@ -1,6 +1,5 @@
 <?php
 
-
 class core
 {
     private static $config;
@@ -27,15 +26,18 @@ class core
         ];
     }
 
-    function logic()
+    public function logic()
     {
-        foreach(self::$config as $host => $auth) {
-            $this->client->setDefaultOption('auth', [$auth['User'], $auth['Password']]);
-            $this->client->setDefaultOption('exceptions', false);
-            $this->client->get('http://' . $host . '/reboot.htm');
-            $this->client->post('http://' . $host . '/boafrm/formReboot', [
-                'body' => 'reboot=%BA%C6%B5%AF%C6%B0+',
-            ]);
+        foreach (self::$config as $host => $auth) {
+            try {
+                $this->client->setDefaultOption('auth', [$auth['User'], $auth['Password']]);
+                $this->client->get('http://' . $host . '/reboot.htm');
+                $this->client->post('http://' . $host . '/boafrm/formReboot', [
+                    'body' => 'reboot=',
+                ]);
+            } catch (Exception $e) {
+                echo $e->getMessage();
+            }
         }
     }
 }
