@@ -19,7 +19,7 @@ $ php composer.phar install
 or
 $ composer install
 
-$ vim setting.init  // edit config
+$ vim setting.ini  // edit config
 $ php wrapper.php  
 
 ```
