@@ -1,5 +1,7 @@
 # AutoRebootWG1200HP
 
+[![Build Status](https://travis-ci.org/bootjp/AutoRebootWG1200HP.svg?branch=master)](https://travis-ci.org/bootjp/AutoRebootWG1200HP)
+
 ## NEC WG1200HP の再起動ツール / docker images です
 
 ### How to use 
