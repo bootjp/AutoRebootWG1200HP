@@ -1,4 +1,4 @@
-FROM fedora:22
+FROM fedora:latest
 
 MAINTAINER oh@bootjp.me
 
